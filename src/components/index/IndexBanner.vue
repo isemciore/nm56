@@ -1,7 +1,7 @@
 <template>
   <base-card dark>
     <v-img
-      :src="require('@/assets/bilder/275.jpg')"
+      :src="require('@/assets/bilder/275-2.jpg')"
       class="grey lighten-2"
       height="400"
       width="100%"
