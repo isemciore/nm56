@@ -8,6 +8,7 @@ export default new Vuex.Store({
     articles: require('@/data/articles.json'),
     nm56pictures: require('@/data/nm56bilder.json'),
     drawer: false,
+    loggedIn: false,
     items: [
       {
         text: 'Hem',
@@ -45,6 +46,10 @@ export default new Vuex.Store({
     },
     links: (state, getters) => {
       return state.items /*.concat(getters.categories) */
+    },
+
+    loggedIn: (state, getters) => {
+      return state.loggedIn
     },
   },
   mutations: {
