@@ -9,12 +9,16 @@ export default new Vuex.Store({
     drawer: false,
     items: [
       {
-        text: 'Home',
-        href: '#!',
+        text: 'Hem',
+        href: '/#!',
       },
       {
-        text: 'About',
-        href: '#about',
+        text: 'Bilder',
+        href: '/pictures#!',
+      },
+      {
+          text: 'Info',
+        href: '/info#!',
       },
     ],
   },
@@ -39,7 +43,7 @@ export default new Vuex.Store({
       return categories.sort().slice(0, 4)
     },
     links: (state, getters) => {
-      return state.items.concat(getters.categories)
+      return state.items /*.concat(getters.categories) */
     },
   },
   mutations: {

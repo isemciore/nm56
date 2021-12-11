@@ -40,7 +40,9 @@
     name: 'CoreFooter',
 
     data: () => ({
-      items: [
+      items:
+        [
+          /*
         {
           href: '#!',
           icon: 'mdi-twitter',
@@ -68,8 +70,8 @@
         {
           href: '#!',
           icon: 'mdi-pinterest',
-        },
-      ],
+        }, */
+        ],
     }),
   }
 </script>
