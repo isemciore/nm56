@@ -11,15 +11,15 @@ export default new Vuex.Store({
     items: [
       {
         text: 'Hem',
-        href: '/#!',
+        href: '#/',
       },
       {
         text: 'Bilder',
-        href: '/pictures#!',
+        href: '#/pictures#!',
       },
       {
           text: 'Info',
-        href: '/info#!',
+        href: '#/info#!',
       },
     ],
   },
