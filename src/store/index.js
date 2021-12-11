@@ -6,6 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     articles: require('@/data/articles.json'),
+    nm56pictures: require('@/data/nm56bilder.json'),
     drawer: false,
     items: [
       {

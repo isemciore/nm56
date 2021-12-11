@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <articles>
-      <banner />
+      <!--<banner />-->
     </articles>
     <!--
       <about />
