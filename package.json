@@ -5,7 +5,7 @@
   "scripts": {
     "deploy": "yarn build && now && now alias",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build && cp _redirects dist/_redirects",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
