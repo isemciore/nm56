@@ -31,13 +31,12 @@
           {{ link.text }}
         </v-btn>
         <v-spacer />
-
         <v-dialog
+          v-if="!loggedIn"
           transition="dialog-top-transition"
           max-width="600"
         >
           <template
-            v-if="!loggedIn"
             v-slot:activator="{ on, attrs }"
           >
             <v-btn
@@ -57,36 +56,43 @@
                 Logga in
               </v-toolbar>
               <v-card-text style="padding-bottom: 0">
-                <v-text-field
-                  v-model="email"
-                  label="Email adress"
-                  required
-                />
-                <v-text-field
-                  v-model="password"
-                  :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-                  :type="show1 ? 'text' : 'password'"
-                  @click:append="show1 = !show1"
-                  label="Lösenord"
-                  required
-                />
+                <v-form @submit="login">
+                  <v-text-field
+                    v-model="email"
+                    label="Email adress"
+                    required
+                  />
+                  <v-text-field
+                    v-model="password"
+                    :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                    :type="show1 ? 'text' : 'password'"
+                    label="Lösenord"
+                    required
+                    @click:append="show1 = !show1"
+                  />
+                  <v-btn
+                    text
+                    @click="reset_password"
+                  >
+                    Glömt lösenordet: {{ email }}
+                  </v-btn>
+                  <v-btn
+                    text
+                    color="error"
+                    @click="dialog.value = false"
+                  >
+                    Cancel
+                  </v-btn>
+                  <v-btn
+                    text
+                    color="primary"
+                    type="submit"
+                    @click="dialog.value = false"
+                  >
+                    Logga in
+                  </v-btn>
+                </v-form>
               </v-card-text>
-              <v-card-actions class="justify-end">
-                <v-btn
-                  text
-                  color="error"
-                  @click="dialog.value = false"
-                >
-                  Cancel
-                </v-btn>
-                <v-btn
-                  text
-                  color="primary"
-                  @click="dialog.value = false"
-                >
-                  Logga in
-                </v-btn>
-              </v-card-actions>
             </v-card>
           </template>
         </v-dialog>
@@ -109,8 +115,9 @@
   import {
     mapGetters,
     mapMutations,
+    mapActions,
   } from 'vuex'
-
+  import { getAuth, sendPasswordResetEmail } from 'firebase/auth'
   export default {
     name: 'CoreAppBar',
 
@@ -127,12 +134,30 @@
 
     methods: {
       ...mapMutations(['toggleDrawer']),
+      ...mapActions(['firebaseLogin']),
       onClick (e, item) {
         e.stopPropagation()
 
         if (item.to || !item.href) return
 
         this.$vuetify.goTo(item.href.endsWith('!') ? 0 : item.href)
+      },
+      login (e) {
+        e.preventDefault()
+        this.firebaseLogin({ email: this.email, password: this.password })
+      },
+      reset_password (e) {
+        this.dialog = false
+        const auth = getAuth()
+        sendPasswordResetEmail(auth, this.email)
+          .then(() => {
+            console.log('Sent password rset popup')
+          })
+          .catch((error) => {
+            console.log(error.code)
+            console.log(error.message)
+            // ..
+          })
       },
     },
   }

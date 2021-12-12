@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Pictures from '../views/Pictures.vue'
 import Index from '../views/Index.vue'
 import Info from '../views/Info.vue'
-
+import Internt from '../views/Internt'
 
 Vue.use(Router)
 
@@ -25,6 +25,11 @@ export default new Router({
       path: '/info',
       name: 'info',
       component: Info,
+    },
+    {
+      path: '/internt',
+      name: 'internt',
+      component: Internt,
     },
   ],
 })
