@@ -1,10 +1,11 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app'
 import { getAnalytics } from 'firebase/analytics'
-import { getStorage } from 'firebase/storage'
+import { getDownloadURL, getMetadata, getStorage, listAll, ref } from 'firebase/storage'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { mapMutations } from 'vuex'
-import store from "./store";
+import store from './store'
+const { initializeAppCheck, ReCaptchaV3Provider } = require('firebase/app-check')
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -23,6 +24,15 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig)
+// self.FIREBASE_APPCHECK_DEBUG_TOKEN = true
+const appCheck = initializeAppCheck(firebaseApp, {
+  provider: new ReCaptchaV3Provider('6LfpXZodAAAAABaJCNr8eUlVcYJZXLCZaowOvpwQ'),
+
+  // Optional argument. If true, the SDK automatically refreshes App Check
+  // tokens as needed.
+  isTokenAutoRefreshEnabled: true,
+})
+
 const analytics = getAnalytics(firebaseApp)
 const storage = getStorage(firebaseApp, 'gs://nm56-521ce.appspot.com')
 
@@ -36,6 +46,27 @@ onAuthStateChanged(auth, user => {
   } else {
     console.log('Logged out')
     store.dispatch('DUMMY_LOGIN', null)
-    //store.commit('SET_USER_LOGIN_STATUS', false)
+    // store.commit('SET_USER_LOGIN_STATUS', false)
   }
 })
+
+function populateFileList (listRef) {
+  listAll(listRef)
+    .then((res) => {
+      res.prefixes.forEach((folderRef) => {
+        populateFileList(folderRef)
+      })
+      res.items.forEach((itemRef) => {
+        getMetadata(itemRef).then((metaData) => {
+          getDownloadURL(itemRef).then((dl) => {
+            store.commit('ADD_PUBLIC_LINK', { downloadLink: dl, ...metaData })
+          })
+        })
+      })
+    }).catch((error) => {
+    console.log(error)
+  })
+}
+
+const listRef = ref(storage, 'public')
+populateFileList(listRef)

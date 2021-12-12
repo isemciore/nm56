@@ -11,6 +11,7 @@ const store = new Vuex.Store({
     loggedIn: false,
     added_internal: false,
     user: null,
+    publicDownloadLinks: [],
     items: [
       {
         text: 'Hem',
@@ -46,6 +47,9 @@ const store = new Vuex.Store({
 
       return categories.sort().slice(0, 4)
     },
+    publicDownloadLinks: (state) => {
+      return state.publicDownloadLinks
+    },
     user: (state, getters) => {
       return state.user
     },
@@ -58,10 +62,13 @@ const store = new Vuex.Store({
     },
   },
   mutations: {
+    ADD_PUBLIC_LINK (state, payload) {
+        state.publicDownloadLinks.push(payload)
+    },
     setDrawer: (state, payload) => (state.drawer = payload),
     toggleDrawer: state => (state.drawer = !state.drawer),
     LOGIN_USER (state, user) { /* actually useless does something in background */
-      if (!state.added_internal) {
+      if (!state.added_internal && user != null) {
         state.items = state.items.concat({
           text: 'Internt',
           href: '#/internt#!',
@@ -70,6 +77,11 @@ const store = new Vuex.Store({
       }
       state.user = { ...user }
       state.loggedIn = user != null
+      /*
+      if (!state.loggedIn) {
+        state.items = state.items.filter(function (value, index, arr) { return value.text !== 'Internt' })
+      }
+      */
     },
   },
   actions: {

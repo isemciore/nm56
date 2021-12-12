@@ -31,6 +31,12 @@
           {{ link.text }}
         </v-btn>
         <v-spacer />
+        <v-btn
+          v-if="loggedIn"
+          @click="logout"
+        >
+          Logout
+        </v-btn>
         <v-dialog
           v-if="!loggedIn"
           transition="dialog-top-transition"
@@ -56,10 +62,12 @@
                 Logga in
               </v-toolbar>
               <v-card-text style="padding-bottom: 0">
-                <v-form @submit="login">
+                <v-form @submit="login"
+                        v-model="valid">
                   <v-text-field
                     v-model="email"
                     label="Email adress"
+                    :rules="emailRules"
                     required
                   />
                   <v-text-field
@@ -67,14 +75,14 @@
                     :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
                     :type="show1 ? 'text' : 'password'"
                     label="Lösenord"
-                    required
                     @click:append="show1 = !show1"
                   />
                   <v-btn
                     text
                     @click="reset_password"
+                    :disabled="!valid"
                   >
-                    Glömt lösenordet: {{ email }}
+                    Glömt lösenordet
                   </v-btn>
                   <v-btn
                     text
@@ -87,7 +95,7 @@
                     text
                     color="primary"
                     type="submit"
-                    @click="dialog.value = false"
+                    :disabled="!valid"
                   >
                     Logga in
                   </v-btn>
@@ -117,15 +125,20 @@
     mapMutations,
     mapActions,
   } from 'vuex'
-  import { getAuth, sendPasswordResetEmail } from 'firebase/auth'
+  import { getAuth, sendPasswordResetEmail, signOut } from 'firebase/auth'
   export default {
     name: 'CoreAppBar',
 
     data: () => ({
+      valid: true,
       dialog: false,
       show1: false,
       email: '',
       password: '',
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      ],
     }),
 
     computed: {
@@ -145,6 +158,10 @@
       login (e) {
         e.preventDefault()
         this.firebaseLogin({ email: this.email, password: this.password })
+      },
+      logout () {
+        const auth = getAuth()
+        signOut(auth).then().catch((error) => { console.log(error) })
       },
       reset_password (e) {
         this.dialog = false

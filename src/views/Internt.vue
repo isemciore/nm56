@@ -1,25 +1,43 @@
 <template>
   <div id="Info">
     <v-container>
-
       <v-row>
-        <v-btn @click="get_item_list('ny_medlem')">
-          Hämta saker
+        <v-btn @click="get_item_list()">
+          Uppdatera
         </v-btn>
-
+      </v-row>
+      <v-row>
         <v-card>
-          <v-list-item
-            v-for="item in newMemberLink"
-            :key="item.md5Hash"
-            two-line
-          >
-            <v-list-item-content>
-              <v-list-item-title>{{ item.name }}</v-list-item-title>
-              <v-list-item-subtitle>
-                <a :href="item.downloadLink">Ladda ner</a>
-              </v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
+          <v-card-subtitle>
+            Stadgar och regler:
+          </v-card-subtitle>
+          <v-simple-table dense>
+            <template v-slot:default>
+              <thead>
+                <tr>
+                  <th class="text-left">
+                    Filnamn
+                  </th>
+                  <th class="text-left">
+                    Meta
+                  </th>
+                  <th class="text-right">
+                    Nerladdnings länk
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  v-for="item in newMemberLink"
+                  :key="item.md5Hash"
+                >
+                  <td>{{ item.name }}</td>
+                  <td>---</td>
+                  <td> <a :href="item.downloadLink">Ladda ner</a></td>
+                </tr>
+              </tbody>
+            </template>
+          </v-simple-table>
         </v-card>
       </v-row>
     </v-container>
@@ -32,7 +50,7 @@
 
   export default {
     name: 'Internt',
-    data: function() {
+    data: function () {
       return {
         newMemberLink: [],
       }
@@ -47,10 +65,16 @@
     methods: {
       get_item_list (path) {
         const storage = getStorage()
-        const listRef = ref(storage, path)
+        const listRef = ref(storage, 'ny_medlem')
+
+        this.newMemberLink.splice(0, this.newMemberLink)
+        this.populate_file_list(listRef, this.newMemberLink)
+      },
+      populate_file_list (listRef, fileList) {
         listAll(listRef)
           .then((res) => {
             res.prefixes.forEach((folderRef) => {
+              this.populate_file_list(folderRef, fileList)
               // All the prefixes under listRef.
               // You may call listAll() recursively on them.
             })
@@ -58,12 +82,13 @@
               getMetadata(itemRef).then((metaData) => {
                 getDownloadURL(itemRef).then((dl) => {
                   // Check if there is n't match
-                  this.newMemberLink.push({ downloadLink: dl, ...metaData })
+                  fileList.push({ downloadLink: dl, ...metaData })
                 })
               })
               // All the items under listRef.
             })
           }).catch((error) => {
+            console.log(error)
           // Uh-oh, an error occurred!
           })
       },
