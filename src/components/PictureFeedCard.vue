@@ -47,11 +47,10 @@
               small
               @click="dialog=true"
             >Mer</v-chip>
-            <v-dialog v-if="value.original" v-model="dialog">
+            <v-dialog v-if="value.original" v-model="dialog" max-width="800px">
               <template>
-                <v-card style="max-height: 80vh;">
+                <v-card class="ma-0 pa-0" style="max-width: 800px;">
                     <v-img
-                      contain
                       :src="require(`@/assets/bilder/${value.original}`)"
                     ></v-img>
                 </v-card>
