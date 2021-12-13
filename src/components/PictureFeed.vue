@@ -56,6 +56,7 @@
   import {
     mapState,
   } from 'vuex'
+  import { getAnalytics, logEvent } from 'firebase/analytics'
 
   export default {
     name: 'PictureFeed',
@@ -77,7 +78,8 @@
       paginatedArticles () {
         const start = (this.page - 1) * 11
         const stop = this.page * 11
-
+        const analytics = getAnalytics()
+        logEvent(analytics, 'display public image ', { page: this.page })
         return this.nm56pictures.slice(start, stop)
       },
     },

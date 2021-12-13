@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app'
-import { getAnalytics } from 'firebase/analytics'
+import { getAnalytics, logEvent } from 'firebase/analytics'
 import { getDownloadURL, getMetadata, getStorage, listAll, ref } from 'firebase/storage'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { mapMutations } from 'vuex'
@@ -42,6 +42,8 @@ onAuthStateChanged(auth, user => {
   if (user != null) {
     console.log('Logged in')
     store.dispatch('DUMMY_LOGIN', user)
+    console.log(user)
+    logEvent(analytics, 'login website', { user: user.email })
     // store.commit('SET_USER_LOGIN_STATUS', true)
   } else {
     console.log('Logged out')
@@ -70,3 +72,5 @@ function populateFileList (listRef) {
 
 const listRef = ref(storage, 'public')
 populateFileList(listRef)
+
+logEvent(analytics, 'enter website')
