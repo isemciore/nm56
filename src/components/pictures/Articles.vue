@@ -1,10 +1,5 @@
 <template>
   <section id="feed">
-    <!--
-    <feed>
-      <slot />
-    </feed>
-    -->
     <picture-feed><slot /></picture-feed>
   </section>
 </template>
@@ -15,7 +10,6 @@
 
     components: {
       PictureFeed: () => import('@/components/PictureFeed'),
-      Feed: () => import('@/components/Feed'),
     },
   }
 </script>
