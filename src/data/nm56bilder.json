@@ -1,8 +1,618 @@
 [
-  {
-    "title": "Polaroid NM",
-    "author": "Okänd",
-    "category": "nm56",
-    "hero": "266-1.jpg"
-  }
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/0_(2).jpg",
+        "original": "dest/compressed/0_(2)_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/0_(3).jpg",
+        "original": "dest/compressed/0_(3)_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/0.jpg",
+        "original": "dest/compressed/0_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/1_(2).jpg",
+        "original": "dest/compressed/1_(2)_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/1_(3).jpg",
+        "original": "dest/compressed/1_(3)_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/1.jpg",
+        "original": "dest/compressed/1_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/10.jpg",
+        "original": "dest/compressed/10_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/11.jpg",
+        "original": "dest/compressed/11_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/12.jpg",
+        "original": "dest/compressed/12_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/13.jpg",
+        "original": "dest/compressed/13_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/14.jpg",
+        "original": "dest/compressed/14_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/15.jpg",
+        "original": "dest/compressed/15_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/16.jpg",
+        "original": "dest/compressed/16_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/162981085_10224823613754600_6395759334444238345_n.jpg",
+        "original": "dest/compressed/162981085_10224823613754600_6395759334444238345_n_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/2_(2).jpg",
+        "original": "dest/compressed/2_(2)_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/2.jpg",
+        "original": "dest/compressed/2_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/3_(2).jpg",
+        "original": "dest/compressed/3_(2)_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/3.jpg",
+        "original": "dest/compressed/3_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/4_(2).jpg",
+        "original": "dest/compressed/4_(2)_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/4.jpg",
+        "original": "dest/compressed/4_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/5_(2).jpg",
+        "original": "dest/compressed/5_(2)_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/5.jpg",
+        "original": "dest/compressed/5_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/6_(2).jpg",
+        "original": "dest/compressed/6_(2)_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/6.jpg",
+        "original": "dest/compressed/6_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/7_(2).jpg",
+        "original": "dest/compressed/7_(2)_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/7.jpg",
+        "original": "dest/compressed/7_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/8_(2).jpg",
+        "original": "dest/compressed/8_(2)_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/8.jpg",
+        "original": "dest/compressed/8_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/9.jpg",
+        "original": "dest/compressed/9_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/Bygget_NM_1931.jpg",
+        "original": "dest/compressed/Bygget_NM_1931_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/Flygfoto.jpg",
+        "original": "dest/compressed/Flygfoto_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_0082.jpg",
+        "original": "dest/compressed/IMG_0082_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_0193.jpg",
+        "original": "dest/compressed/IMG_0193_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_1803.jpg",
+        "original": "dest/compressed/IMG_1803_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_1893.jpg",
+        "original": "dest/compressed/IMG_1893_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_1894.jpg",
+        "original": "dest/compressed/IMG_1894_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_2283.jpg",
+        "original": "dest/compressed/IMG_2283_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5651.jpg",
+        "original": "dest/compressed/IMG_5651_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5652.jpg",
+        "original": "dest/compressed/IMG_5652_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5653.jpg",
+        "original": "dest/compressed/IMG_5653_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5654.jpg",
+        "original": "dest/compressed/IMG_5654_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5655.jpg",
+        "original": "dest/compressed/IMG_5655_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5656.jpg",
+        "original": "dest/compressed/IMG_5656_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5657.jpg",
+        "original": "dest/compressed/IMG_5657_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5658.jpg",
+        "original": "dest/compressed/IMG_5658_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5659.jpg",
+        "original": "dest/compressed/IMG_5659_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5660.jpg",
+        "original": "dest/compressed/IMG_5660_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5661.jpg",
+        "original": "dest/compressed/IMG_5661_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5662.jpg",
+        "original": "dest/compressed/IMG_5662_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5664.jpg",
+        "original": "dest/compressed/IMG_5664_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5665.jpg",
+        "original": "dest/compressed/IMG_5665_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5666-1.jpg",
+        "original": "dest/compressed/IMG_5666-1_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5666.jpg",
+        "original": "dest/compressed/IMG_5666_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5667-1.jpg",
+        "original": "dest/compressed/IMG_5667-1_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5667.jpg",
+        "original": "dest/compressed/IMG_5667_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5668.jpg",
+        "original": "dest/compressed/IMG_5668_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5669.jpg",
+        "original": "dest/compressed/IMG_5669_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5670.jpg",
+        "original": "dest/compressed/IMG_5670_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5671.jpg",
+        "original": "dest/compressed/IMG_5671_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5672.jpg",
+        "original": "dest/compressed/IMG_5672_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5673.jpg",
+        "original": "dest/compressed/IMG_5673_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5674.jpg",
+        "original": "dest/compressed/IMG_5674_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5675.jpg",
+        "original": "dest/compressed/IMG_5675_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5676.jpg",
+        "original": "dest/compressed/IMG_5676_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5680.jpg",
+        "original": "dest/compressed/IMG_5680_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5682.jpg",
+        "original": "dest/compressed/IMG_5682_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5683.jpg",
+        "original": "dest/compressed/IMG_5683_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5684.jpg",
+        "original": "dest/compressed/IMG_5684_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5686.jpg",
+        "original": "dest/compressed/IMG_5686_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_5689.jpg",
+        "original": "dest/compressed/IMG_5689_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_6332.jpg",
+        "original": "dest/compressed/IMG_6332_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_6622.jpg",
+        "original": "dest/compressed/IMG_6622_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_8058.jpg",
+        "original": "dest/compressed/IMG_8058_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_8972.jpg",
+        "original": "dest/compressed/IMG_8972_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_9710.jpg",
+        "original": "dest/compressed/IMG_9710_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_9728.jpg",
+        "original": "dest/compressed/IMG_9728_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_9938.jpg",
+        "original": "dest/compressed/IMG_9938_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/IMG_9940.jpg",
+        "original": "dest/compressed/IMG_9940_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/NM_70.jpg",
+        "original": "dest/compressed/NM_70_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/NMA.0081479.jpg",
+        "original": "dest/compressed/NMA.0081479_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/norr_maelarstrand_1938.jpg",
+        "original": "dest/compressed/norr_maelarstrand_1938_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/Nyaor_20-21.jpg",
+        "original": "dest/compressed/Nyaor_20-21_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/RF6A0442___zzz.jpg",
+        "original": "dest/compressed/RF6A0442___zzz_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/RF6A0442.jpg",
+        "original": "dest/compressed/RF6A0442_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/RF6A1088.jpg",
+        "original": "dest/compressed/RF6A1088_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/riddarfjaerden_1937.jpg",
+        "original": "dest/compressed/riddarfjaerden_1937_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/Tidning_1931,_2.jpg",
+        "original": "dest/compressed/Tidning_1931,_2_compressed.jpg"
+    },
+    {
+        "title": "unknown",
+        "author": "unknown",
+        "category": "unknown",
+        "compressedImg": "dest/original/Tidning_1931.jpg",
+        "original": "dest/compressed/Tidning_1931_compressed.jpg"
+    }
 ]

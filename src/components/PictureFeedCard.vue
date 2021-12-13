@@ -7,10 +7,10 @@
       :height="value.prominent ? 450 : 350"
       color="grey lighten-1"
       dark
-      href="#!"
+      @click="dialog=true"
     >
       <v-img
-        :src="require(`@/assets/bilder/${value.hero}`)"
+        :src="require(`@/assets/bilder/${value.compressedImg}`)"
         height="100%"
         gradient="rgba(0, 0, 0, .42), rgba(0, 0, 0, .42)"
       >
@@ -45,10 +45,18 @@
               color="primary"
               label
               small
-              @click.stop=""
-            >
-              Read More
-            </v-chip>
+              @click="dialog=true"
+            >Mer</v-chip>
+            <v-dialog v-if="value.original" v-model="dialog">
+              <template>
+                <v-card style="max-height: 80vh;">
+                    <v-img
+                      contain
+                      :src="require(`@/assets/bilder/${value.original}`)"
+                    ></v-img>
+                </v-card>
+              </template>
+            </v-dialog>
           </v-col>
         </v-row>
       </v-img>
@@ -59,7 +67,11 @@
 <script>
   export default {
     name: 'PictureFeedCard',
-
+    components: {
+    },
+    data: () => ({
+      dialog:false
+    }),
     props: {
       size: {
         type: Number,

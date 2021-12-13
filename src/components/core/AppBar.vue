@@ -39,6 +39,7 @@
         </v-btn>
         <v-dialog
           v-if="!loggedIn"
+          v-model="dialog"
           transition="dialog-top-transition"
           max-width="600"
         >
@@ -53,7 +54,7 @@
               Login
             </v-btn>
           </template>
-          <template v-slot:default="dialog">
+          <template>
             <v-card>
               <v-toolbar
                 color="primary"
@@ -62,8 +63,13 @@
                 Logga in
               </v-toolbar>
               <v-card-text style="padding-bottom: 0">
-                <v-form @submit="login"
-                        v-model="valid">
+                <p v-if="displayReset">
+                  Skickar återställnings mail till {{ email }}
+                </p>
+                <v-form
+                  v-model="valid"
+                  @submit="login"
+                >
                   <v-text-field
                     v-model="email"
                     label="Email adress"
@@ -79,15 +85,15 @@
                   />
                   <v-btn
                     text
-                    @click="reset_password"
                     :disabled="!valid"
+                    @click="reset_password"
                   >
                     Glömt lösenordet
                   </v-btn>
                   <v-btn
                     text
                     color="error"
-                    @click="dialog.value = false"
+                    @click="dialog = false"
                   >
                     Cancel
                   </v-btn>
@@ -132,9 +138,11 @@
     data: () => ({
       valid: true,
       dialog: false,
+      statusDialog: '',
       show1: false,
       email: '',
       password: '',
+      displayReset: false,
       emailRules: [
         v => !!v || 'E-mail is required',
         v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
@@ -143,6 +151,16 @@
 
     computed: {
       ...mapGetters(['links', 'loggedIn']),
+    },
+
+    watch: {
+      dialog: {
+        handler (newValue, oldValue) {
+          if (!newValue) {
+            this.displayReset = false
+          }
+        },
+      },
     },
 
     methods: {
@@ -162,9 +180,11 @@
       logout () {
         const auth = getAuth()
         signOut(auth).then().catch((error) => { console.log(error) })
+        this.dialog = false
       },
       reset_password (e) {
-        this.dialog = false
+        this.displayReset = true
+
         const auth = getAuth()
         sendPasswordResetEmail(auth, this.email)
           .then(() => {
