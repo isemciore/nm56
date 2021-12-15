@@ -3,6 +3,7 @@ import { initializeApp } from 'firebase/app'
 import { getAnalytics, logEvent } from 'firebase/analytics'
 import { getDownloadURL, getMetadata, getStorage, listAll, ref } from 'firebase/storage'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import { getFirestore } from "firebase/firestore"
 import { mapMutations } from 'vuex'
 import store from './store'
 const { initializeAppCheck, ReCaptchaV3Provider } = require('firebase/app-check')
@@ -24,7 +25,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig)
-// self.FIREBASE_APPCHECK_DEBUG_TOKEN = true
+//self.FIREBASE_APPCHECK_DEBUG_TOKEN = true
 const appCheck = initializeAppCheck(firebaseApp, {
   provider: new ReCaptchaV3Provider('6LfpXZodAAAAABaJCNr8eUlVcYJZXLCZaowOvpwQ'),
 
@@ -35,14 +36,13 @@ const appCheck = initializeAppCheck(firebaseApp, {
 
 const analytics = getAnalytics(firebaseApp)
 const storage = getStorage(firebaseApp, 'gs://nm56-521ce.appspot.com')
-
+const db = getFirestore();
 const auth = getAuth()
 onAuthStateChanged(auth, user => {
   console.log('Auth changed')
   if (user != null) {
     console.log('Logged in')
     store.dispatch('DUMMY_LOGIN', user)
-    console.log(user)
     logEvent(analytics, 'login website', { user: user.email })
     // store.commit('SET_USER_LOGIN_STATUS', true)
   } else {
@@ -70,7 +70,7 @@ function populateFileList (listRef) {
   })
 }
 
-const listRef = ref(storage, 'public')
-populateFileList(listRef)
+const listRef = ref(storage, 'public/nyttigt')
+// populateFileList(listRef)
 
 logEvent(analytics, 'enter website')

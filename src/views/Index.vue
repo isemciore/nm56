@@ -3,6 +3,11 @@
     <index-banner></index-banner>
 
     <about></about>
+
+      <v-container>
+        <p>Logga in för att se internt information</p>
+
+      </v-container>
   </div>
 </template>
 

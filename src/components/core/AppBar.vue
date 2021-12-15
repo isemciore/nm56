@@ -30,7 +30,6 @@
         >
           {{ link.text }}
         </v-btn>
-        <v-spacer />
         <v-btn
           v-if="loggedIn"
           @click="logout"
@@ -51,7 +50,7 @@
               v-bind="attrs"
               v-on="on"
             >
-              Login
+              Logga in
             </v-btn>
           </template>
           <template>
@@ -71,8 +70,8 @@
                   @submit="login"
                 >
                   <v-text-field
-                    v-model="email"
-                    label="Email adress"
+                    v-model="userName"
+                    label="Användarnamn"
                     :rules="emailRules"
                     required
                   />
@@ -85,10 +84,10 @@
                   />
                   <v-btn
                     text
-                    :disabled="!valid"
+                    disabled
                     @click="reset_password"
                   >
-                    Glömt lösenordet
+                    Återställ
                   </v-btn>
                   <v-btn
                     text
@@ -111,14 +110,14 @@
           </template>
         </v-dialog>
         <v-spacer />
-
+        <!--
         <v-text-field
           append-icon="mdi-magnify"
           flat
           hide-details
           solo-inverted
           style="max-width: 300px;"
-        />
+        />-->
       </v-row>
     </v-container>
   </v-app-bar>
@@ -140,17 +139,23 @@
       dialog: false,
       statusDialog: '',
       show1: false,
-      email: '',
+      userName: '',
       password: '',
       displayReset: false,
       emailRules: [
         v => !!v || 'E-mail is required',
-        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
       ],
     }),
 
     computed: {
-      ...mapGetters(['links', 'loggedIn']),
+      ...mapGetters(['links', 'loggedIn', 'user']),
+      email () {
+        if (this.userName.includes('@')) {
+          return this.userName
+        } else {
+          return this.userName.concat('@nm56.se')
+        }
+      },
     },
 
     watch: {

@@ -1,43 +1,19 @@
 <template>
   <div id="Info">
     <v-container>
-      Info
-
-      Länk till ekonomi
-
       <v-row>
-        <v-card>
-          <v-card-subtitle>
-            Användbara länkar för externa
-          </v-card-subtitle>
-          <v-simple-table dense>
-            <template v-slot:default>
-              <thead>
-                <tr>
-                  <th class="text-left">
-                    Filnamn
-                  </th>
-                  <th class="text-left">
-                    Meta
-                  </th>
-                  <th class="text-right">
-                    Nerladdnings länk
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr
-                  v-for="item in publicDownloadLinks"
-                  :key="item.md5Hash"
-                >
-                  <td>{{ item.name }}</td>
-                  <td>---</td>
-                  <td> <a :href="item.downloadLink">Ladda ner</a></td>
-                </tr>
-              </tbody>
-            </template>
-          </v-simple-table>
-        </v-card>
+        <v-col cols="4" style="min-width: 500px">
+          <news-column collection-name="public"></news-column>
+        </v-col>
+        <v-col cols="auto">
+
+        <category-table
+          storage-path="public/nyttigt"
+          title="Publikt"
+          description="Användbara länkar för gäster"
+          :default-data="publicDownloadLinks"
+        />
+        </v-col>
       </v-row>
     </v-container>
   </div>
@@ -45,9 +21,17 @@
 
 <script>
   import { mapGetters } from 'vuex'
+  import CategoryTable from '@/components/internt/categoryTable'
+  import NewsColumn from '@/components/internt/newsColumn'
   export default {
     name: 'Info',
-
+    components: { NewsColumn, CategoryTable },
+    data: function () {
+      return {
+        newMemberLink: [],
+        poke: 1,
+      }
+    },
     computed: {
       ...mapGetters(['publicDownloadLinks']),
     },

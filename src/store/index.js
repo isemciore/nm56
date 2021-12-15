@@ -56,7 +56,6 @@ const store = new Vuex.Store({
     links: (state, getters) => {
       return state.items /* .concat(getters.categories) */
     },
-
     loggedIn: (state) => {
       return state.loggedIn
     },
@@ -94,7 +93,6 @@ const store = new Vuex.Store({
       signInWithEmailAndPassword(auth, authDetails.email, authDetails.password)
         .then((userCredential) => {
           // Signed in
-          console.log(userCredential)
           const user = userCredential.user
           commit('LOGIN_USER', user)
           // ...
