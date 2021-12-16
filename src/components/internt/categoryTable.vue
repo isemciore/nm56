@@ -1,7 +1,7 @@
 <template>
-  <v-card>
-    <v-card-subtitle> {{ title }} </v-card-subtitle>
-    <v-card-text> {{description}} </v-card-text>
+  <v-card class="ma-2" flat>
+    <v-card-title class="pa-1 text--black"> {{ title }} </v-card-title>
+    <v-card-text v-if="description !== ''" class="pa-1"> {{description}} </v-card-text>
     <v-simple-table dense>
       <template v-slot:default>
         <thead><tr>
@@ -14,6 +14,9 @@
           <td>{{ item.name }}</td>
           <td>---</td>
           <td> <a :href="item.downloadLink">Ladda ner</a></td>
+        </tr>
+        <tr v-if="fileLinks.length === 0">
+          <td>Hittade inga filer i denna kategori</td>
         </tr>
         </tbody>
       </template>
@@ -66,7 +69,10 @@
         type: String,
         required: true
       },
-      description: String,
+      description: {
+        type:String,
+        default: ''
+      },
       listener: Number,
       defaultData: {
         type: Array,

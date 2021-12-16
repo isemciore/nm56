@@ -16,7 +16,7 @@
     <v-card v-for="post in this.posts" :key="post.date.seconds" class="ma-5"
     style="border: 2px solid dodgerblue">
       <v-card-title>{{post.title}}</v-card-title>
-      <v-card-subtitle> {{post.date.toDate()}}</v-card-subtitle>
+      <v-card-subtitle> {{cleanDateString(post.date)}}</v-card-subtitle>
       <v-card-text>{{post.description}}</v-card-text>
     </v-card>
   </v-container>
@@ -48,6 +48,9 @@
     },
 
     methods: {
+      cleanDateString(dateObj){
+        return dateObj.toDate().toString().substring(0, 21)
+      },
       async getNewsPost () {
         this.posts.slice(0, this.posts.length)
         const db = getFirestore()

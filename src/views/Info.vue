@@ -2,7 +2,7 @@
   <div id="Info">
     <v-container>
       <v-row>
-        <v-col cols="4" style="min-width: 500px">
+        <v-col cols="auto" style="min-width: 500px">
           <news-column collection-name="public"></news-column>
         </v-col>
         <v-col cols="auto">
@@ -12,6 +12,10 @@
           title="Publikt"
           description="Användbara länkar för gäster"
           :default-data="publicDownloadLinks"
+        />
+        <category-table
+          storage-path="public/manadsBrev"
+          title="Månadsbrev"
         />
         </v-col>
       </v-row>
