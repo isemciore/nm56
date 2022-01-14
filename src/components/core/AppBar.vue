@@ -110,6 +110,17 @@
           </template>
         </v-dialog>
         <v-spacer />
+        <v-btn
+          icon
+          @click="toggleThumbnail"
+        >
+          <v-icon v-if="!thumbnailImage">
+            mdi-image-size-select-small
+          </v-icon>
+          <v-icon v-else>
+            mdi-image-size-select-large
+          </v-icon>
+        </v-btn>
         <!--
         <v-text-field
           append-icon="mdi-magnify"
@@ -148,7 +159,7 @@
     }),
 
     computed: {
-      ...mapGetters(['links', 'loggedIn', 'user']),
+      ...mapGetters(['links', 'loggedIn', 'user', 'thumbnailImage']),
       email () {
         if (this.userName.includes('@')) {
           return this.userName
@@ -169,7 +180,7 @@
     },
 
     methods: {
-      ...mapMutations(['toggleDrawer']),
+      ...mapMutations(['toggleDrawer', 'toggleThumbnail']),
       ...mapActions(['firebaseLogin']),
       onClick (e, item) {
         e.stopPropagation()

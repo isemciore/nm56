@@ -1,16 +1,16 @@
 <template>
   <v-col
     cols="12"
-    :md="size === 2 ? 6 : size === 3 ? 4 : undefined"
+    :md="size === 2 ? 6 : size === 3 ? 4 : size === 4 ? 3 : size === 6 ? 2 : size === 12 ? 1 : undefined"
   >
     <base-card
-      :height="value.prominent ? 450 : 350"
+      :height="size===12 ? 75: value.prominent ? 450 : 350"
       color="grey lighten-1"
       dark
       @click="dialog=true"
     >
       <v-img
-        :src="require(`@/assets/bilder/${value.compressedImg}`)"
+        :src="require(`@/assets/bilder/${size===12 ? value.thumbnail: value.compressedImg}`)"
         height="100%"
         gradient="rgba(0, 0, 0, .42), rgba(0, 0, 0, .42)"
       >
@@ -18,7 +18,7 @@
           v-if="!value.prominent"
           class="fill-height text-right ma-0"
         >
-          <v-col cols="12">
+          <v-col v-if="size!== 12" cols="12">
             <v-chip
               label
               class="mx-0 mb-2 text-uppercase"
@@ -40,7 +40,7 @@
           </v-col>
 
           <v-col align-self="end">
-            <v-chip
+            <v-chip v-if="size!== 12"
               class="text-uppercase ma-0"
               color="primary"
               label

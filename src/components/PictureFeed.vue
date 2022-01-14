@@ -61,23 +61,30 @@
   export default {
     name: 'PictureFeed',
 
+    props: {
+      layout: {
+        type: Array,
+        required: false,
+        default: [4, 4, 4, 4, 2, 2, 3, 3, 3, 2, 2]
+      },
+    },
+
     components: {
       PictureFeedCard: () => import('@/components/PictureFeedCard'),
     },
 
     data: () => ({
-      layout: [2, 2, 1, 2, 2, 3, 3, 3, 3, 3, 3],
       page: 1,
     }),
 
     computed: {
       ...mapState(['nm56pictures']),
       pages () {
-        return Math.ceil(this.nm56pictures.length / 11)
+        return Math.ceil(this.nm56pictures.length / this.layout.length)
       },
       paginatedArticles () {
-        const start = (this.page - 1) * 11
-        const stop = this.page * 11
+        const start = (this.page - 1) * this.layout.length
+        const stop = this.page * this.layout.length
         const analytics = getAnalytics()
         logEvent(analytics, 'display public image ', { page: this.page })
         return this.nm56pictures.slice(start, stop)

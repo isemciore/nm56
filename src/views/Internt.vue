@@ -9,15 +9,15 @@
         <v-row>
           <category-table
             storage-path="internt/stadgar_och_regler"
-            title="titel"
-            description="beskrivning"
+            title="Intern dokumentation"
+            description="Endast medlemmar kan se följande"
             :listener="poke"
           />
         </v-row>
         <v-row>
           <category-table
             storage-path="internt/styrelsen"
-            title="titel"
+            title="Dokument för styrelsen"
             description="Saker som bara styrelsen ser"
             :listener="poke"
           />

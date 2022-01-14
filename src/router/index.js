@@ -4,6 +4,7 @@ import Pictures from '../views/Pictures.vue'
 import Index from '../views/Index.vue'
 import Info from '../views/Info.vue'
 import Internt from '../views/Internt'
+import Ovrigt from '../views/Ovrigt'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/internt',
       name: 'internt',
       component: Internt,
+    },
+    {
+      path: '/ovrigt',
+      name: 'Övrigt',
+      component: Ovrigt,
     },
   ],
 })

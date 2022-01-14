@@ -12,6 +12,7 @@ const store = new Vuex.Store({
     added_internal: false,
     user: null,
     publicDownloadLinks: [],
+    thumbnailImage: false,
     items: [
       {
         text: 'Hem',
@@ -22,9 +23,13 @@ const store = new Vuex.Store({
         href: '#/pictures#!',
       },
       {
-          text: 'Info',
+        text: 'Allmän Info',
         href: '#/info#!',
       },
+      {
+        text: "Övrigt",
+        href: '#/ovrigt#!',
+      }
     ],
   },
   getters: {
@@ -59,8 +64,14 @@ const store = new Vuex.Store({
     loggedIn: (state) => {
       return state.loggedIn
     },
+    thumbnailImage: (state, getters) => {
+      return state.thumbnailImage
+    },
   },
   mutations: {
+    toggleThumbnail (state) {
+      state.thumbnailImage = !state.thumbnailImage
+    },
     ADD_PUBLIC_LINK (state, payload) {
         state.publicDownloadLinks.push(payload)
     },
