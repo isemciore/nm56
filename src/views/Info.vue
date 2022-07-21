@@ -1,7 +1,7 @@
 <template>
   <div id="Info">
-    <v-container>
-      <v-row>
+    <v-container fluid>
+      <v-row justify="center">
         <v-col cols="auto" style="min-width: 500px">
           <news-column collection-name="public"></news-column>
         </v-col>

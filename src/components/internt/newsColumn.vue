@@ -14,7 +14,7 @@
       </v-card>
     </v-dialog>
     <v-card v-for="post in this.posts" :key="post.date.seconds" class="ma-5"
-    style="border: 2px solid dodgerblue">
+    style="border: 2px solid dodgerblue; max-width: 700px">
       <v-card-title>{{post.title}}</v-card-title>
       <v-card-subtitle> {{cleanDateString(post.date)}}</v-card-subtitle>
       <v-card-text>
