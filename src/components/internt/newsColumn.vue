@@ -17,7 +17,9 @@
     style="border: 2px solid dodgerblue">
       <v-card-title>{{post.title}}</v-card-title>
       <v-card-subtitle> {{cleanDateString(post.date)}}</v-card-subtitle>
-      <v-card-text>{{post.description}}</v-card-text>
+      <v-card-text>
+        <template v-for="line in post.description.split('\n')">{{line}}<br></template>
+      </v-card-text>
     </v-card>
   </v-container>
 </template>
